@@ -1,0 +1,36 @@
+[
+    {
+        "name":"iphone",
+        "price":75000,
+        "featured":true,
+        "company":"apple"
+    },
+    {
+        "name":"iphone15",
+        "price":85000,
+        "featured":true,
+        "company":"apple"
+    },
+    {
+        "name":"watch",
+        "price":5000,
+        "featured":true,
+        "company":"apple"
+    },
+    {
+        "name":"galaxyZflip",
+        "price":90000,
+        "featured":true,
+        "company":"samsung"
+    },
+    {
+        "name":"dell gaming",
+        "price":60000,
+        "company":"dell"
+    },
+    {
+        "name":"note12",
+        "price":20000,
+        "company":"mi"
+    }
+]
