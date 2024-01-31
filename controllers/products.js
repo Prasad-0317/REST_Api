@@ -27,15 +27,21 @@ const getAllProducts = async(req,res)=>{
         apidata = apidata.select(selectFix)
         // queryObj.sort = sortFix
     }
-    
+
+    let page = Number(req.query.page) || 1;
+    let limit = Number(req.query.limit) || 10;
+    let skip = (page-1)*limit
+    apidata = apidata.skip(skip).limit(limit)
+
     console.log(queryObj);
     // const myData = await Product.find(queryObj).sort(sort) --> not working
-    const myData = await apidata
-    res.status(200).json({myData})
+    const Products = await apidata
+    res.status(200).json({Products ,nbHits:Products.length})
 }
 const getAllProductsTesting = async(req,res)=>{
-    const myData = await Product.find(req.query).sort("price")
-    res.status(200).json({myData})
+    // const myData = await Product.find(req.query).sort("-price")
+    const myData = await Product.find(req.query).skip(2)
+    res.status(200).json({myData , nbHits:myData.length})
 }
 
 module.exports = {getAllProducts,getAllProductsTesting}
